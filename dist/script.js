@@ -1,5 +1,5 @@
-// Add confirmed details here later. Year is deliberately blank until confirmed.
-const weddingDetails = { year: '', venueName: '', times: {18: '', 19: '', 20: ''}, parents: {groom: '', bride: ''}, photos: [] };
+// Add confirmed details here later. Countdown date is confirmed as 20 November 2026, 00:00 India time.
+const weddingDetails = { year: '2026', venueName: '', times: {18: '', 19: '', 20: ''}, parents: {groom: '', bride: ''}, photos: ['assets/couple.jpg'] };
 document.getElementById('venue-name').textContent = weddingDetails.venueName;
 document.querySelectorAll('[data-time]').forEach(el => { el.textContent = weddingDetails.times[el.dataset.time] || ''; });
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

@@ -30,3 +30,4 @@ nav a:hover{color:#fff}.hero{background:radial-gradient(ellipse at 50% 20%,#a635
 footer{background:#4c1028;border-top:3px double #d2a15e}.footer-names{color:#ffe3ab}footer p{color:#e8c7b2}.footer-names span{color:#eec674}
 @media(max-width:700px){.hero{padding:55px 23px 28px;min-height:930px}.arch{border-radius:220px 220px 12px 12px}.arch-inner{inset:10px;border-radius:210px 210px 6px 6px}.ganesh-image{width:140px;height:140px;margin-bottom:20px}.bouquet{width:190px;height:250px;opacity:.95}.bouquet-left{left:-105px;top:95px}.bouquet-right{right:-110px;bottom:0}.hero .eyebrow{margin:18px 0}.hero h1{font-size:clamp(40px,10.8vw,58px)}.hero .amp{margin:8px 0}.invitation:before,.invitation:after{font-size:45px;top:50px}.event.featured:hover{transform:translateY(-6px)}.toran span{width:20%}.event-date strong{font-size:52px}}
 @media(prefers-reduced-motion:reduce){.primary:hover,.event:hover,.event.featured:hover{transform:none}}
+.event.featured h3{color:#ffe3ab}
