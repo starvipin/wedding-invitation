@@ -1,0 +1,32 @@
+/* Rich wedding palette and decorative details. */
+:root{--wine:#861b3b;--gold:#a67523;--ink:#533132;--paper:#fff8e9}
+header{background:#4c1028;border-bottom:1px solid #d8af62;color:#ffe9bf}
+.monogram,.nav-contact{color:#ffe0a0}.monogram span{color:#e8b95e}
+nav a:hover{color:#fff}.hero{background:radial-gradient(ellipse at 50% 20%,#a63551 0,#6b1735 48%,#3c1026 100%);padding-top:65px;padding-bottom:35px;min-height:1000px}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,#eac47666 1px,transparent 1.5px),radial-gradient(circle,#eac47626 1px,transparent 1.5px);background-size:48px 48px,24px 24px;background-position:0 0,12px 12px;mask-image:linear-gradient(#000,transparent 90%)}
+.arch{background:radial-gradient(ellipse at 50% 25%,#fffdf4,#fff2d9 75%,#f5dec0);border:2px solid #e7bb65;box-shadow:0 0 0 7px #e4ba631a,0 0 0 8px #e4ba6355,0 24px 80px #24041166;border-radius:350px 350px 15px 15px}
+.arch-inner{border:1px solid #b9863d9c;border-radius:340px 340px 8px 8px;inset:14px}
+.ganesh-image{width:170px;height:170px;border-radius:50%;padding:6px;border:1px solid #b88232;outline:3px solid #e4bc7038;outline-offset:4px;box-shadow:0 8px 25px #b5823126;margin-bottom:22px;mix-blend-mode:multiply}
+.hero h1{color:#891c3d;text-shadow:0 2px 0 #fff,0 5px 15px #9c4d4220;font-weight:600}
+.hero .amp{color:#9d6d21;display:flex;align-items:center;justify-content:center;gap:18px;margin:10px 0}
+.hero .amp:before,.hero .amp:after{content:"";width:45px;height:1px;background:linear-gradient(90deg,transparent,#ba8834)}
+.hero .amp:after{transform:rotate(180deg)}
+.hero .eyebrow{color:#8c263b;letter-spacing:4px}.hero-tag{color:#805038}.date-line{border-top:1px solid #b57a37;border-bottom:1px solid #b57a37;padding:12px 20px 7px;background:#f6e1bb66;margin-bottom:8px}.location{letter-spacing:2px}
+.primary{background:linear-gradient(120deg,#9e2448,#64112e);border:1px solid #b77a37;box-shadow:0 6px 16px #6f18332b;border-radius:5px;transition:transform .2s,box-shadow .2s}
+.primary:hover{background:linear-gradient(120deg,#b13255,#7d1738);box-shadow:0 8px 22px #6f183345;transform:translateY(-3px)}
+.bouquet{filter:saturate(1.65) drop-shadow(0 9px 7px #3b10252b);width:300px;height:370px}.bouquet-left{left:-155px;top:75px}.bouquet-right{right:-155px;bottom:0}.side-note,.scroll{color:#f2cc8d}.petal{background:#efb58c}
+.toran{position:absolute;inset:0 0 auto;height:60px;display:flex;justify-content:space-around;pointer-events:none;overflow:hidden;z-index:1}
+.toran span{width:12%;height:35px;border-bottom:3px solid #e9b450;border-radius:0 0 50% 50%;position:relative;box-shadow:0 3px 0 #f4d79444}
+.toran span:after{content:"✦";position:absolute;bottom:-22px;left:calc(50% - 6px);color:#ffd587;font-size:20px;text-shadow:0 0 10px #ffcc7280}
+.invitation{position:relative}.invitation:before,.invitation:after{content:"❦";position:absolute;top:90px;color:#c5974b;font-size:80px;opacity:.25}.invitation:before{left:2%}.invitation:after{right:2%;transform:scaleX(-1)}
+.signature{color:#9d6520}.section-heading .eyebrow{font-weight:600}
+.celebrations{background:radial-gradient(ellipse at top,#ffe9ce,#f4d7d0);border-top:1px solid #d7ab65;border-bottom:1px solid #d7ab65}
+.event{border:1px solid #bb8a44;background:linear-gradient(#fff9e8,#fce5c9);box-shadow:0 14px 35px #7a263615,inset 0 0 0 7px #fff7e166;transition:transform .25s,box-shadow .25s}
+.event:hover{transform:translateY(-6px);box-shadow:0 18px 35px #7a26362b}.event.featured{background:radial-gradient(ellipse at top,#a73b57,#64112f);border-color:#daa64c;box-shadow:0 18px 38px #67213533,inset 0 0 0 7px #f8d59b12}.event.featured:hover{transform:translateY(-16px)}
+.event:last-child{background:linear-gradient(#f0f2dc,#dee7cb)}.event-date strong{font-size:56px;font-weight:600}.event-symbol{color:#b67b24}.featured .event-symbol{color:#f0c675}
+.quote{background:radial-gradient(ellipse at center,#9f3450,#51102a);border-top:5px double #d4ab65;border-bottom:5px double #d4ab65}.quote span{color:#f3cd82}.quote p{color:#fff1d6}
+.venue-art{background:radial-gradient(ellipse at 50% 10%,#ffe9a6,#f0c882 70%,#dbaa70);border:2px solid #b88133;box-shadow:0 12px 30px #95572222,inset 0 0 0 9px #ffecc566}.venue-art>span{color:#70401f}.palace-body,.tower{background:#bc7f51}.tower:before{background:#9f4d45}.gate{background:#6a243b;border-color:#d7a765;box-shadow:0 0 0 5px #f9dfad}.palace-body i{background:#6e3441}.steps{border-color:#a56e42}
+.closing{background:radial-gradient(ellipse at 50% 0,#fff6dc,#f3d4c9);border-top:1px solid #d2a15e}.share{background:#fff8e9;border-radius:5px;border-color:#a56d28;box-shadow:0 4px 14px #6f183313}.contact-actions a{color:#78203a;border-color:#ae7139}.closing .ornament{color:#a56d28}
+footer{background:#4c1028;border-top:3px double #d2a15e}.footer-names{color:#ffe3ab}footer p{color:#e8c7b2}.footer-names span{color:#eec674}
+@media(max-width:700px){.hero{padding:55px 23px 28px;min-height:930px}.arch{border-radius:220px 220px 12px 12px}.arch-inner{inset:10px;border-radius:210px 210px 6px 6px}.ganesh-image{width:140px;height:140px;margin-bottom:20px}.bouquet{width:190px;height:250px;opacity:.95}.bouquet-left{left:-105px;top:95px}.bouquet-right{right:-110px;bottom:0}.hero .eyebrow{margin:18px 0}.hero h1{font-size:clamp(40px,10.8vw,58px)}.hero .amp{margin:8px 0}.invitation:before,.invitation:after{font-size:45px;top:50px}.event.featured:hover{transform:translateY(-6px)}.toran span{width:20%}.event-date strong{font-size:52px}}
+@media(prefers-reduced-motion:reduce){.primary:hover,.event:hover,.event.featured:hover{transform:none}}
