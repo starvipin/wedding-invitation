@@ -26,6 +26,6 @@ After saving changes, refresh your browser. No build step is needed. Local edits
 
 The countdown targets 20 November 2026 at 00:00 India time (the start of the wedding date, not a confirmed ceremony time). The supplied couple photo is in `dist/assets/couple.jpg`. Function times and parents' names are still empty. The map points to the supplied locality, not a confirmed event venue.
 
-`dist/celebrate.js` controls the countdown and an original gentle instrumental melody synthesized with Web Audio. Music starts only after the visitor presses the music button, with pause and volume controls; it pauses when the page is hidden. `dist/moments.css` styles the photo, countdown and music controls.
+`dist/celebrate.js` controls the countdown and an original gentle instrumental melody synthesized with Web Audio. Music uses a fixed low volume with no visible controls. It attempts to start automatically; browsers that block autoplay require the first tap, click or key press. It pauses while the page is hidden and resumes when visible. `dist/moments.css` styles the photo and countdown.
 
 Google Fonts needs an internet connection; if unavailable, the browser uses fallback fonts.

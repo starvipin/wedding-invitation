@@ -16,9 +16,9 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // Original, gentle pentatonic instrumental. No third-party tracks or downloads.
-const musicButton = document.getElementById('music-toggle');
-const volumeInput = document.getElementById('music-volume');
-let audioContext, master, timer, playing = false, busy = false;
+const MUSIC_VOLUME = 0.10;
+
+let audioContext, master, timer, playing = false;
 const melody = [0, 2, 4, 7, 9, 7, 4, 2, 4, 7, 12, 9, 7, 4, 2, 0, 2, 4, 7, 4, 2, 0, -3, 0, 4, 7, 9, 12, 9, 7, 4, 2];
 let noteIndex = 0, nextNote = 0;
 function tone(frequency, start, duration, level, type = 'sine') {
@@ -48,46 +48,45 @@ function scheduleMusic() {
     nextNote += 0.72;
   }
 }
-function musicLabel() {
-  musicButton.setAttribute('aria-pressed', String(playing));
-  musicButton.textContent = playing ? 'Ⅱ संगीत रोकें' : '♫ संगीत चलाएँ';
-}
-async function stopMusic() {
-  playing = false;
+function syncPlayback() {
   clearInterval(timer);
-  if (audioContext) await audioContext.suspend();
-  musicLabel();
+  playing = audioContext?.state === 'running' && !document.hidden;
+  if (!playing) return;
+  nextNote = Math.max(nextNote, audioContext.currentTime + 0.04);
+  scheduleMusic();
+  timer = setInterval(scheduleMusic, 120);
 }
-musicButton.addEventListener('click', async () => {
-  if (busy) return;
-  busy = true;
+function startMusic() {
+  if (document.hidden) return;
   try {
-    if (playing) { await stopMusic(); return; }
     const Audio = window.AudioContext || window.webkitAudioContext;
-    if (!Audio) throw new Error('Audio unavailable');
+    if (!Audio) return;
     if (!audioContext) {
       audioContext = new Audio();
       master = audioContext.createGain();
-      master.gain.value = Number(volumeInput.value);
+      master.gain.value = MUSIC_VOLUME;
       master.connect(audioContext.destination);
       nextNote = audioContext.currentTime + 0.06;
+      audioContext.addEventListener('statechange', syncPlayback);
     }
-    await audioContext.resume();
-    if (audioContext.state !== 'running') throw new Error('Audio unavailable');
-    playing = true;
-    nextNote = Math.max(nextNote, audioContext.currentTime + 0.04);
-    scheduleMusic();
-    timer = setInterval(scheduleMusic, 120);
-    musicLabel();
-  } catch {
-    playing = false;
-    clearInterval(timer);
-    musicLabel();
-    document.getElementById('music-status').textContent = 'संगीत नहीं चल सका। दोबारा कोशिश करें।';
-  } finally { busy = false; }
+    // Resume is also called on user interaction: autoplay may remain pending
+    // until a browser receives its first permitted tap, click or key press.
+    if (audioContext.state !== 'running') {
+      audioContext.resume().then(syncPlayback).catch(() => {});
+    } else if (!playing) syncPlayback();
+  } catch { /* Browsers without audio support still show the invitation. */ }
+}
+function pauseHiddenMusic() {
+  playing = false;
+  clearInterval(timer);
+  if (audioContext) audioContext.suspend().catch(() => {});
+}
+for (const event of ['pointerdown', 'touchend', 'keydown']) {
+  document.addEventListener(event, startMusic, { passive: true });
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) pauseHiddenMusic(); else startMusic();
 });
-volumeInput.addEventListener('input', () => {
-  if (master) master.gain.setTargetAtTime(Number(volumeInput.value), audioContext.currentTime, 0.08);
-});
-document.addEventListener('visibilitychange', () => { if (document.hidden && playing) stopMusic(); });
-window.addEventListener('pagehide', () => { if (playing) stopMusic(); });
+window.addEventListener('pagehide', pauseHiddenMusic);
+window.addEventListener('pageshow', startMusic);
+startMusic();
