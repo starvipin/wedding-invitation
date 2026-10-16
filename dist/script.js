@@ -7,7 +7,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 }
 document.getElementById('share').addEventListener('click', async () => {
   const status = document.getElementById('share-status');
-  const data = { title: 'विनायक एवं चन्दरकान्ता • शुभ विवाह', text: 'सप्रेम निमंत्रण 🌸\n१८–२० नवंबर • द्वारका, नई दिल्ली\nहमारी खुशियों में सपरिवार शामिल हों।', url: location.href.split('#')[0] };
+  const data = { title: 'विनायक एवं चन्दरकान्ता • शुभ विवाह', text: 'सप्रेम निमंत्रण 🌸\n18–20 नवंबर • द्वारका, नई दिल्ली\nहमारी खुशियों में सपरिवार शामिल हों।', url: location.href.split('#')[0] };
   try { if(navigator.share) { await navigator.share(data); status.textContent=''; } else if(navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(`${data.text}\n${data.url}`); status.textContent='निमंत्रण का लिंक कॉपी हो गया है। अब अपनों को भेजें।'; } else { status.textContent='ऊपर ब्राउज़र में दिख रहे लिंक को कॉपी करके साझा करें।'; } }
   catch(error) { if(error.name !== 'AbortError') status.textContent='ऊपर ब्राउज़र में दिख रहे लिंक को कॉपी करके साझा करें।'; }
 });
