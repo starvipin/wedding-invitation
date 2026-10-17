@@ -24,7 +24,7 @@ You can also run `npm start` or `npm run dev` from this folder.
 
 After saving changes, refresh your browser. No build step is needed. Local edits do not automatically update the hosted website.
 
-The countdown targets 20 November 2026 at 00:00 India time (the start of the wedding date, not a confirmed ceremony time). The supplied couple photo is in `dist/assets/couple.jpg`. Function times and parents' names are still empty. The map points to the supplied locality, not a confirmed event venue.
+The countdown targets 20 November 2026 at 00:00 India time (the start of the wedding date, not a confirmed ceremony time). The supplied couple photo is in `dist/assets/couple.jpg` . Function times and parents' names are still empty. The map points to the supplied locality, not a confirmed event venue.
 
 `dist/celebrate.js` controls the wedding countdown. There is no background music. `dist/moments.css` styles the photo and countdown.
 
